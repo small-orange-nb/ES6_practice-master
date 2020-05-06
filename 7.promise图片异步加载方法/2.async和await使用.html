@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //async 默认返回一个promise 对象
+    //例：
+    async function pro2 (){
+        //return 的内容就是成功回调的参数
+    }
+    pro2 ().then((res)=>{
+
+    }).catch((e)=>{
+
+    })
+
+    //-----------------------------------------------------------------------------
+
+    //await 与async 配合使用
+    let p = new Promise((resolve,reject)=>{
+        resolve("success")
+    });
+    async function pro2 (){
+        //await 后面是一个promise 实例 如果不是 也会默认转为promise 
+        //直接让 promise实例回调执行 返回执行时的参数
+        await p; 
+        //等await 执行之后再去执行后面的代码
+    }
+    pro2 ().then((res)=>{
+
+    }).catch((e)=>{
+
+    })
+</script>
+</html>
